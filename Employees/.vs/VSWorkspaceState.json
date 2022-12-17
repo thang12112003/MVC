@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\EmployeesWeb",
+    "\\EmployeesWeb\\Controllers",
+    "\\EmployeesWeb\\Views",
+    "\\EmployeesWeb\\Views\\Employee",
+    "\\EmployeesWeb\\Views\\Home"
+  ],
+  "SelectedNode": "\\EmployeesWeb\\Views\\Home\\Index.cshtml",
+  "PreviewInSolutionExplorer": false
+}

@@ -1,0 +1,72 @@
+﻿@model IEnumerable<Employee>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<partial name="_Notification" />
+
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="">Employee List</h2>
+        </div>
+        <div class="col-6 text-end">
+            <a asp-controller="Employee" asp-action="Create" class="btn btn-pencil-square"> <i class="bi bi-plus-circle"></i> &nbsp; Create New Employee </a>
+        </div>
+    </div>
+</div>
+
+
+<table class="table table-bordered table-dark">
+    <thead>
+        <tr>
+            <th scope="row">
+                Employee ID
+            </th>
+            <th scope="row">
+                Employee Name
+            </th>
+
+            <th scope ="row">
+                Department
+            </th>
+            <th>
+                Salary
+            </th>
+            <th scope="row">
+                Action
+            </th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var obj in Model)
+        {
+            <tr>
+                <td width="10%">
+                    @obj.ID
+                </td>
+                <td width="40%">
+                    @obj.EmployeeName
+                </td>
+                <td width="25%">
+                    @obj.Department
+                </td>
+                <td width="25%">
+                    @obj.Salary
+                </td>
+                <td>
+                    <div class=" btn-group" role="group">
+                        <a asp-controller="Employee" asp-action="Edit" asp-route-id="@obj.EmployeeID"
+                       class="btn btn-primary"> <i class="bi bi-pencil-square"></i> Edit</a>
+                        <a asp-controller="Employee" asp-action="Delete" asp-route-id="@obj.EmployeeID"
+                       class="btn btn-primary "> <i class="bi bi-pencil-square"></i> Delete</a>
+                    </div>
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+
